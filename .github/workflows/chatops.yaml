@@ -1,6 +1,7 @@
 name: ChatOps
-on: [issue_comment]
-
+# on: [issue_comment]
+on:
+  workflow_dispatch:
 jobs:
   full-test-run:
     if: github.event.issue.pull_request != null &&  contains(github.event.comment.body, '/run-full-test') && (github.actor == 'hamelsmu' || github.actor == 'hohsiangwu'  || github.actor == 'inc0' || github.actor == 'awmatheson')
